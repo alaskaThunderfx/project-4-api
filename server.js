@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 // require route files
-const exampleRoutes = require('./app/routes/example_routes')
+const characterRoutes = require('./app/routes/character_routes')
 const userRoutes = require('./app/routes/user_routes')
 
 // require middleware
@@ -21,7 +21,7 @@ const auth = require('./lib/auth')
 // define server and client ports
 // used for cors and local port declaration
 const serverDevPort = 4741
-const clientDevPort = 7165
+const clientDevPort = 8080
 
 // establish database connection
 // use new version of URL parser
@@ -56,7 +56,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(requestLogger)
 
 // register route files
-app.use(exampleRoutes)
+app.use(characterRoutes)
 app.use(userRoutes)
 
 // register error handling middleware
